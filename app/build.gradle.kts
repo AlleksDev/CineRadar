@@ -50,6 +50,12 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.ui.text.google.fonts)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)   //viewModel()
+    implementation(libs.com.squareup.retrofit2.retrofit)        // Retrofit
+    implementation(libs.com.squareup.retrofit2.converter.json)  // JSON
+    implementation(libs.io.coil.kt.coil.compose)
+    implementation(libs.androidx.benchmark.traceprocessor)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
