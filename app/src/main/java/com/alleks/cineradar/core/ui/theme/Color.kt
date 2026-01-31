@@ -6,13 +6,13 @@ import androidx.compose.ui.graphics.Color
 val CineRadarGold = Color(0xFFFFD700)
 val CineRadarGoldDark = Color(0xFFD4A900)
 
-val CineRadarDarkGreen = Color(0xFF0D1A05)       // Verde más profundo
-val CineRadarDarkGreenLight = Color(0xFF0E1805)  // Ligeramente más claro
+val CineRadarDarkGreen = Color(0xFF0D1A05)
+val CineRadarDarkGreenLight = Color(0xFF0E1805)
 
 val CineRadarSurfaceContainer = Color(0xFF122106)
 val CineRadarSurfaceContainerHigh = Color(0xFF182C0A)
 
-val primaryLight = Color(0xFFD4A900)              // Verde oscuro para contraste
+val primaryLight = Color(0xFFD4A900)
 val onPrimaryLight = Color(0xFF051701)
 val primaryContainerLight = Color(0xFFE1E7DB)
 val onPrimaryContainerLight = Color(0xFF102000)
