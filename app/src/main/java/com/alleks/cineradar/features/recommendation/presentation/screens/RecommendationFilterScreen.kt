@@ -59,7 +59,6 @@ fun RecommendationFilterScreen(
                     .verticalScroll(rememberScrollState())
                     .padding(horizontal = 24.dp, vertical = 16.dp)
             ) {
-                // Sección: ¿Qué quieres ver?
                 Text(
                     text = "¿Qué quieres ver?",
                     fontSize = 22.sp,
@@ -92,7 +91,6 @@ fun RecommendationFilterScreen(
 
                 Spacer(modifier = Modifier.height(32.dp))
 
-                // Sección: ¿Cuánto tiempo tienes?
                 Text(
                     text = "¿Cuánto tiempo tienes?",
                     fontSize = 22.sp,
@@ -108,7 +106,7 @@ fun RecommendationFilterScreen(
                 ) {
                     DurationCard(
                         topText = "Menos de",
-                        mainText = "90min",
+                        mainText = "90",
                         isSelected = uiState.selectedDuration == DurationOption.LESS_THAN_90,
                         onClick = { 
                             viewModel.selectDuration(
@@ -120,7 +118,7 @@ fun RecommendationFilterScreen(
                     )
                     DurationCard(
                         topText = "Entre",
-                        mainText = "90-120min",
+                        mainText = "90-120",
                         isSelected = uiState.selectedDuration == DurationOption.BETWEEN_90_120,
                         onClick = { 
                             viewModel.selectDuration(
@@ -132,7 +130,7 @@ fun RecommendationFilterScreen(
                     )
                     DurationCard(
                         topText = "Más de",
-                        mainText = "120min",
+                        mainText = "120",
                         isSelected = uiState.selectedDuration == DurationOption.MORE_THAN_120,
                         onClick = { 
                             viewModel.selectDuration(
@@ -146,7 +144,6 @@ fun RecommendationFilterScreen(
 
                 Spacer(modifier = Modifier.height(32.dp))
 
-                // Sección: Detalles extra
                 Text(
                     text = "¿Quieres añadir detalles extra?",
                     fontSize = 22.sp,
@@ -163,7 +160,6 @@ fun RecommendationFilterScreen(
 
                 Spacer(modifier = Modifier.height(32.dp))
 
-                // Botón de búsqueda
                 Button(
                     onClick = { viewModel.getRecommendation() },
                     modifier = Modifier

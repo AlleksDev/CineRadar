@@ -55,6 +55,12 @@ fun DurationCard(
                 fontWeight = FontWeight.Bold,
                 color = if (isSelected) primaryColor else onBackgroundColor
             )
+            Text(
+                text = "min",
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Normal,
+                color = if (isSelected) primaryColor else onBackgroundColor
+            )
         }
     }
 }

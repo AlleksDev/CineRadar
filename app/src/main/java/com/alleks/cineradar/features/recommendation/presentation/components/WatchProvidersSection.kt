@@ -75,13 +75,24 @@ private fun ProviderBadge(
 
 private fun getProviderAbbreviation(name: String): String {
     return when {
-        name.contains("Netflix", ignoreCase = true) -> "N"
-        name.contains("HBO", ignoreCase = true) -> "HBO"
-        name.contains("Amazon", ignoreCase = true) -> "Prime"
-        name.contains("Disney", ignoreCase = true) -> "D+"
-        name.contains("Apple", ignoreCase = true) -> "TV+"
-        name.contains("Paramount", ignoreCase = true) -> "P+"
+        name.contains("Netflix", ignoreCase = true) -> "Netflix"
+        name.contains("HBO", ignoreCase = true) -> "HBO Max"
+        name.contains("Amazon", ignoreCase = true) || name.contains("Prime", ignoreCase = true) -> "Prime"
+        name.contains("Disney", ignoreCase = true) -> "Disney+"
+        name.contains("Apple", ignoreCase = true) -> "Apple TV+"
+        name.contains("Paramount", ignoreCase = true) -> "Paramount+"
         name.contains("Star", ignoreCase = true) -> "Star+"
-        else -> name.take(3)
+        name.contains("Claro", ignoreCase = true) -> "Claro"
+        name.contains("Movistar", ignoreCase = true) -> "Movistar"
+        name.contains("Crunchyroll", ignoreCase = true) -> "Crunchy"
+        name.contains("Mubi", ignoreCase = true) -> "MUBI"
+        name.contains("Cinépolis", ignoreCase = true) || name.contains("Cinepolis", ignoreCase = true) -> "Cinépolis"
+        name.contains("VIX", ignoreCase = true) || name.contains("ViX", ignoreCase = true) -> "ViX"
+        name.contains("Google", ignoreCase = true) -> "Google Play"
+        name.contains("YouTube", ignoreCase = true) -> "YouTube"
+        name.contains("Microsoft", ignoreCase = true) -> "Microsoft"
+        name.contains("Vudu", ignoreCase = true) -> "Vudu"
+        name.contains("Rakuten", ignoreCase = true) -> "Rakuten"
+        else -> name.take(10) // Mostrar más caracteres para nombres desconocidos
     }
 }

@@ -41,9 +41,27 @@ class RecommendationRepositoryImpl(
         val watchProvidersResponse = api.getWatchProviders(randomMovie.id)
         val mexicoProviders = watchProvidersResponse.results?.get("MX")
         val providers = mutableListOf<WatchProvider>()
+        val addedIds = mutableSetOf<Int>()
         
+        // Agregar providers de suscripción (flatrate)
         mexicoProviders?.flatrate?.forEach { provider ->
-            providers.add(provider.toDomain())
+            if (addedIds.add(provider.providerId)) {
+                providers.add(provider.toDomain())
+            }
+        }
+        
+        // Si no hay flatrate, agregar de alquiler o compra
+        if (providers.isEmpty()) {
+            mexicoProviders?.rent?.forEach { provider ->
+                if (addedIds.add(provider.providerId)) {
+                    providers.add(provider.toDomain())
+                }
+            }
+            mexicoProviders?.buy?.forEach { provider ->
+                if (addedIds.add(provider.providerId)) {
+                    providers.add(provider.toDomain())
+                }
+            }
         }
 
         return movieDetails.toDomain(providers)
