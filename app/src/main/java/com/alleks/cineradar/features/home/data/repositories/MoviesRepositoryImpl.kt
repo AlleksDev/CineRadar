@@ -6,11 +6,16 @@ import com.alleks.cineradar.features.home.domain.repositories.MoviesRepository
 import com.alleks.cineradar.features.home.domain.entities.Movie
 
 class MoviesRepositoryImpl(
-    private val  api: CineRadarApi
+    private val api: CineRadarApi
 ): MoviesRepository {
+    
     override suspend fun getMovies(): List<Movie> {
-        val response = api.getMovies()
+        val response = api.getPopularMovies()
         return response.results.map { it.toDomain() }
     }
-
+    
+    suspend fun getMovies(page: Int): List<Movie> {
+        val response = api.getPopularMovies(page = page)
+        return response.results.map { it.toDomain() }
+    }
 }
