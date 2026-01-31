@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.alleks.cineradar.core.di.AppContainer
 import com.alleks.cineradar.core.navigation.NavigationWrapper
-import com.example.compose.CineRadarTheme
+import com.alleks.cineradar.core.ui.theme.CineRadarTheme
 
 class MainActivity : ComponentActivity() {
     

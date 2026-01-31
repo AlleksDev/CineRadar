@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -40,12 +41,10 @@ fun RecommendationResultScreen(
     onSearchAnother: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val backgroundColor = Color(0xFF1A2E0A)
-
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(backgroundColor)
+            .background(MaterialTheme.colorScheme.background)
     ) {
         Column(
             modifier = Modifier.fillMaxSize()
@@ -59,12 +58,11 @@ fun RecommendationResultScreen(
                     .padding(horizontal = 24.dp, vertical = 16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                // Título "Deberías ver"
                 Text(
                     text = "Deberías ver",
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Medium,
-                    color = Color.White.copy(alpha = 0.8f)
+                    color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f)
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -87,7 +85,7 @@ fun RecommendationResultScreen(
                     text = movie.title,
                     fontSize = 28.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.onBackground,
                     textAlign = TextAlign.Center
                 )
 
@@ -117,14 +115,14 @@ fun RecommendationResultScreen(
                         text = "Sinopsis:",
                         fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = Color.White
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
                         text = movie.overview.ifEmpty { "No hay sinopsis disponible." },
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Normal,
-                        color = Color.White.copy(alpha = 0.8f),
+                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f),
                         lineHeight = 22.sp
                     )
                 }
@@ -144,8 +142,8 @@ fun RecommendationResultScreen(
                         .height(56.dp),
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFFFD700),
-                        contentColor = Color(0xFF1A2E0A)
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
                     )
                 ) {
                     Text(
@@ -165,7 +163,7 @@ fun RecommendationResultScreen(
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Transparent,
-                        contentColor = Color.White
+                        contentColor = MaterialTheme.colorScheme.onBackground
                     )
                 ) {
                     Text(

@@ -2,18 +2,17 @@ package com.alleks.cineradar.features.recommendation.presentation.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.CalendarMonth
 import androidx.compose.material.icons.outlined.Schedule
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -24,6 +23,8 @@ fun MovieInfoRow(
     runtime: Int?,
     modifier: Modifier = Modifier
 ) {
+    val contentColor = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.7f)
+    
     Row(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
@@ -32,7 +33,7 @@ fun MovieInfoRow(
             Icon(
                 imageVector = Icons.Outlined.CalendarMonth,
                 contentDescription = "Año",
-                tint = Color.White.copy(alpha = 0.7f),
+                tint = contentColor,
                 modifier = Modifier.size(18.dp)
             )
             Spacer(modifier = Modifier.width(4.dp))
@@ -40,7 +41,7 @@ fun MovieInfoRow(
                 text = year,
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Normal,
-                color = Color.White.copy(alpha = 0.7f)
+                color = contentColor
             )
         }
 
@@ -52,7 +53,7 @@ fun MovieInfoRow(
             Icon(
                 imageVector = Icons.Outlined.Schedule,
                 contentDescription = "Duración",
-                tint = Color.White.copy(alpha = 0.7f),
+                tint = contentColor,
                 modifier = Modifier.size(18.dp)
             )
             Spacer(modifier = Modifier.width(4.dp))
@@ -60,7 +61,7 @@ fun MovieInfoRow(
                 text = "$runtime min",
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Normal,
-                color = Color.White.copy(alpha = 0.7f)
+                color = contentColor
             )
         }
     }

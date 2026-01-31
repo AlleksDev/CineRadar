@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -39,7 +40,7 @@ fun MovieCard(
             .padding(horizontal = 16.dp, vertical = 8.dp),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFF2A3D1A)
+            containerColor = MaterialTheme.colorScheme.primaryContainer
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
@@ -54,7 +55,7 @@ fun MovieCard(
                 modifier = Modifier
                     .size(width = 80.dp, height = 100.dp)
                     .clip(RoundedCornerShape(8.dp))
-                    .background(Color(0xFF1A2E0A))
+                    .background(MaterialTheme.colorScheme.surfaceContainerHigh)
             ) {
                 if (movie.posterPath != null) {
                     AsyncImage(
@@ -83,13 +84,13 @@ fun MovieCard(
                         text = movie.title,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold,
-                        color = Color.White
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                     if (movie.releaseYear != null) {
                         Text(
                             text = " (${movie.releaseYear})",
                             fontSize = 12.sp,
-                            color = Color(0xFFAAAAAA)
+                            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
                         )
                     }
                 }

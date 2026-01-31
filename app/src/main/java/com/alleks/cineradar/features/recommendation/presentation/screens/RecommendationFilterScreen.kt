@@ -18,13 +18,13 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,12 +42,11 @@ fun RecommendationFilterScreen(
     modifier: Modifier = Modifier
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    val backgroundColor = Color(0xFF1A2E0A)
 
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(backgroundColor)
+            .background(MaterialTheme.colorScheme.background)
     ) {
         Column(
             modifier = Modifier.fillMaxSize()
@@ -65,14 +64,14 @@ fun RecommendationFilterScreen(
                     text = "¿Qué quieres ver?",
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onBackground
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
 
                 if (uiState.isLoadingGenres) {
                     CircularProgressIndicator(
-                        color = Color(0xFFFFD700),
+                        color = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.align(Alignment.CenterHorizontally)
                     )
                 } else {
@@ -98,7 +97,7 @@ fun RecommendationFilterScreen(
                     text = "¿Cuánto tiempo tienes?",
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onBackground
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -152,7 +151,7 @@ fun RecommendationFilterScreen(
                     text = "¿Quieres añadir detalles extra?",
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onBackground
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -173,13 +172,13 @@ fun RecommendationFilterScreen(
                     enabled = !uiState.isLoadingRecommendation,
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFFFD700),
-                        contentColor = Color(0xFF1A2E0A)
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
                     )
                 ) {
                     if (uiState.isLoadingRecommendation) {
                         CircularProgressIndicator(
-                            color = Color(0xFF1A2E0A),
+                            color = MaterialTheme.colorScheme.onPrimary,
                             modifier = Modifier.padding(4.dp)
                         )
                     } else {
@@ -191,13 +190,12 @@ fun RecommendationFilterScreen(
                     }
                 }
 
-                // Mostrar error si existe
                 uiState.error?.let { error ->
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
                         text = error,
                         fontSize = 14.sp,
-                        color = Color(0xFFFF6B6B),
+                        color = MaterialTheme.colorScheme.error,
                         modifier = Modifier.align(Alignment.CenterHorizontally)
                     )
                 }

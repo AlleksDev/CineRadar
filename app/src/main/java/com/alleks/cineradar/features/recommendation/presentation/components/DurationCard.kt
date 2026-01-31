@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,6 +24,9 @@ fun DurationCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val primaryColor = MaterialTheme.colorScheme.primary
+    val onBackgroundColor = MaterialTheme.colorScheme.onBackground
+    
     Card(
         onClick = onClick,
         modifier = modifier,
@@ -32,7 +36,7 @@ fun DurationCard(
         ),
         border = BorderStroke(
             width = if (isSelected) 2.dp else 1.dp,
-            color = if (isSelected) Color(0xFFFFD700) else Color.White.copy(alpha = 0.5f)
+            color = if (isSelected) primaryColor else onBackgroundColor.copy(alpha = 0.5f)
         )
     ) {
         Column(
@@ -43,13 +47,13 @@ fun DurationCard(
                 text = topText,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Normal,
-                color = if (isSelected) Color(0xFFFFD700) else Color.White.copy(alpha = 0.7f)
+                color = if (isSelected) primaryColor else onBackgroundColor.copy(alpha = 0.7f)
             )
             Text(
                 text = mainText,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
-                color = if (isSelected) Color(0xFFFFD700) else Color.White
+                color = if (isSelected) primaryColor else onBackgroundColor
             )
         }
     }

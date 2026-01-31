@@ -1,10 +1,10 @@
 package com.alleks.cineradar.features.recommendation.presentation.components
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -34,15 +34,15 @@ fun SelectableGenreChip(
         shape = RoundedCornerShape(20.dp),
         colors = FilterChipDefaults.filterChipColors(
             containerColor = Color.Transparent,
-            labelColor = Color.White,
+            labelColor = MaterialTheme.colorScheme.onBackground,
             selectedContainerColor = Color.Transparent,
-            selectedLabelColor = Color(0xFFFFD700)
+            selectedLabelColor = MaterialTheme.colorScheme.primary
         ),
         border = FilterChipDefaults.filterChipBorder(
             enabled = true,
             selected = isSelected,
-            borderColor = Color.White.copy(alpha = 0.5f),
-            selectedBorderColor = Color(0xFFFFD700),
+            borderColor = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f),
+            selectedBorderColor = MaterialTheme.colorScheme.primary,
             borderWidth = 1.dp,
             selectedBorderWidth = 2.dp
         )
