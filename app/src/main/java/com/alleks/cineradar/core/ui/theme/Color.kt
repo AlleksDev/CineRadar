@@ -1,4 +1,4 @@
-package com.alleks.cineradar.ui.theme
+package com.alleks.cineradar.core.theme
 
 import androidx.compose.ui.graphics.Color
 
