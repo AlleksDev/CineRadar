@@ -1,7 +1,7 @@
 package com.alleks.cineradar.features.recommendation.data.repositories
 
 import com.alleks.cineradar.core.network.CineRadarApi
-import com.alleks.cineradar.features.recommendation.data.mapper.toDomain
+import com.alleks.cineradar.features.recommendation.data.datasources.remote.mapper.toDomain
 import com.alleks.cineradar.features.recommendation.domain.entities.Genre
 import com.alleks.cineradar.features.recommendation.domain.entities.MovieRecommendation
 import com.alleks.cineradar.features.recommendation.domain.entities.RecommendationFilters

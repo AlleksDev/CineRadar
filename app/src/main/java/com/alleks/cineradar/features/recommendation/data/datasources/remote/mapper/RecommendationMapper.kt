@@ -1,8 +1,8 @@
-package com.alleks.cineradar.features.recommendation.data.mapper
+package com.alleks.cineradar.features.recommendation.data.datasources.remote.mapper
 
-import com.alleks.cineradar.core.network.GenreDto
-import com.alleks.cineradar.core.network.MovieDetailsResponse
-import com.alleks.cineradar.core.network.WatchProvider as WatchProviderDto
+import com.alleks.cineradar.features.recommendation.data.datasources.remote.model.GenreDto
+import com.alleks.cineradar.features.recommendation.data.datasources.remote.model.MovieDetailsResponse
+import com.alleks.cineradar.features.recommendation.data.datasources.remote.model.WatchProviderDto
 import com.alleks.cineradar.features.recommendation.domain.entities.Genre
 import com.alleks.cineradar.features.recommendation.domain.entities.MovieRecommendation
 import com.alleks.cineradar.features.recommendation.domain.entities.WatchProvider
