@@ -55,7 +55,6 @@ fun HomeScreen(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        // Top Bar con logo
         TopBar()
 
         // Contenido principal
