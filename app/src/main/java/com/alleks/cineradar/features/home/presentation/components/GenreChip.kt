@@ -3,6 +3,7 @@ package com.alleks.cineradar.features.home.presentation.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,8 +24,8 @@ fun GenreChip(
         fontWeight = FontWeight.Medium,
         color = Color.White,
         modifier = modifier
-            .clip(RoundedCornerShape(12.dp))
-            .background(Color(0xFF3D5A1E))
+            .clip(RoundedCornerShape(24.dp))
+            .background(Color(0xFF666666))
             .padding(horizontal = 10.dp, vertical = 4.dp)
     )
 }

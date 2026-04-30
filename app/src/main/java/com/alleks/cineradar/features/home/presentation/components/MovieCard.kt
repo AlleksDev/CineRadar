@@ -77,22 +77,18 @@ fun MovieCard(
                 verticalArrangement = Arrangement.Center
             ) {
                 // Título y año
-                Row(
-                    verticalAlignment = Alignment.Bottom
-                ) {
+                Text(
+                    text = movie.title,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+                if (movie.releaseYear != null) {
                     Text(
-                        text = movie.title,
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                        text = " (${movie.releaseYear})",
+                        fontSize = 12.sp,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
                     )
-                    if (movie.releaseYear != null) {
-                        Text(
-                            text = " (${movie.releaseYear})",
-                            fontSize = 12.sp,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
-                        )
-                    }
                 }
 
                 Spacer(modifier = Modifier.height(8.dp))
